@@ -2,6 +2,7 @@
 import os, glob, time, gspread, sys, datetime, logging, threading
 import MySQLdb as mdb
 
+#Author: Chris Baker : chris@cleverhome.co.uk
 #Version: 1.00
 #Descrition: This version has MySQL and Google Spreadsheet code.
 #Last Proven: Stable in Dec 2016, running for over a year.
@@ -20,7 +21,7 @@ devices = list()
 mysqlserver = 'localhost'
 mysqldb = 'temps'
 mysqluserid = 'temps'
-mysqlpw = 'password'
+mysqlpw = ''
 mysqltable = 'temp_sensors'
 
 logging.debug('Google Account -  %s , File Name - %s', email, spreadsheet)
@@ -151,12 +152,6 @@ def worker():
     """thread worker function"""
     print 'Worker'
     return
-
-#threads
-#threads = []
-#t = threading.Thread(target=worker)
-#threads.append(t)
-#t.start()
 
 while True:
 
